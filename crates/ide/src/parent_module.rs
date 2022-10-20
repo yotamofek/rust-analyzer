@@ -1,4 +1,4 @@
-use hir::Semantics;
+use hir::{db::DefDatabase, Semantics};
 use ide_db::{
     base_db::{CrateId, FileId, FileLoader, FilePosition},
     RootDatabase,
@@ -55,7 +55,11 @@ pub(crate) fn parent_module(db: &RootDatabase, position: FilePosition) -> Vec<Na
 
 /// Returns `Vec` for the same reason as `parent_module`
 pub(crate) fn crates_for(db: &RootDatabase, file_id: FileId) -> Vec<CrateId> {
-    db.relevant_crates(file_id).iter().copied().collect()
+    db.relevant_crates(file_id)
+        .iter()
+        .copied()
+        .filter(|&crate_id| db.crate_def_map(crate_id).modules_for_file(file_id).next().is_some())
+        .collect()
 }
 
 #[cfg(test)]
