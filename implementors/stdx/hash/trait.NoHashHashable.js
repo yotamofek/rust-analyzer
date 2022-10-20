@@ -1,0 +1,5 @@
+(function() {var implementors = {};
+implementors["base_db"] = [{"text":"impl <a class=\"trait\" href=\"stdx/hash/trait.NoHashHashable.html\" title=\"trait stdx::hash::NoHashHashable\">NoHashHashable</a> for <a class=\"struct\" href=\"base_db/struct.CrateId.html\" title=\"struct base_db::CrateId\">CrateId</a>","synthetic":false,"types":["base_db::input::CrateId"]}];
+implementors["stdx"] = [];
+implementors["vfs"] = [{"text":"impl <a class=\"trait\" href=\"stdx/hash/trait.NoHashHashable.html\" title=\"trait stdx::hash::NoHashHashable\">NoHashHashable</a> for <a class=\"struct\" href=\"vfs/struct.FileId.html\" title=\"struct vfs::FileId\">FileId</a>","synthetic":false,"types":["vfs::FileId"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
